@@ -126,3 +126,7 @@ if heat_map_button:
     plt.title('Тепловая карта зависимости числовых переменных')
     plt.tight_layout()
     st.pyplot(fig)
+    filename = 'heat_map_plt.png'
+    plt.savefig(filename)
+    with open(filename, 'rb') as img:
+        st.download_button(label='Скачать тепловую карту', data=img)
